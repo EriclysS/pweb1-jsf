@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:body>
+    <ui:composition>
+
+            <div id="home" class="header">
+                <ul class="navbar">
+                    <h:form>
+                    <li><h:link outcome="home">Home</h:link></li>
+                    <li><h:commandLink action="#{perfilMB.perfil()}">Perfil</h:commandLink></li>
+                    <li><h:link outcome="cadastroTCC">Cadastrat TCC</h:link></li>
+                    <li><h:commandLink action="#{loginMB.logout()}">logout</h:commandLink></li>
+                    </h:form>
+                </ul>
+            </div>
+
+    </ui:composition>
+</h:body>
+
+</html>

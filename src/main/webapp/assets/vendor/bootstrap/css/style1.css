@@ -1,0 +1,41 @@
+.navbar {
+    margin-left:70%;
+    line-height: 120%;
+    list-style-type: none;
+    height: 0%;
+}
+
+.navbar li {
+    margin-top: 2%;
+    text-decoration: none;
+    transition: 1s ease-out;
+    padding: 0px 2px;
+    display: inline-block
+
+}
+
+.navbar a{
+    font-weight: 600;
+    color: #8a8a8a;
+    text-decoration: none;
+
+}
+
+.navbar a:after {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 0;
+    margin: 0 .5rem;
+    -webkit-transition: width .3s ease-out, background-color .3s ease-out;
+    transition: width .3s ease-out, background-color .3s ease-out
+}
+
+.navbar a:hover {
+    color: #f3d350
+}
+
+.navbar a:hover:after {
+    width: 100%;
+    background: #f3d350
+}

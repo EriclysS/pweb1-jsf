@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<body>
+
+
+<ui:composition>
+    <div class="dashboard-header">
+        <div class="navbar navbar-expand-lg bg-white fixed-top">
+            <h:link class="navbar-brand" outcome="home">Biblioteca de TCCs</h:link>
+            <button class="navbar-toggler" type="button" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+                <ul class="navbar-nav ml-auto navbar-right-top">
+
+                    <!-- Fazer login ou cadastro-->
+                    <li class="nav-item dropdown nav-user">
+                        <span class="mdl-chip mdl-chip--contact mdl-chip">
+                        <h:link class="nav-link nav-user-img" outcome="login" style="background-color:#2f6fa8; border-radius: 10px; height: 70%; margin-top: 10%" id="navbarDropdownMenuLink2">
+                            <h:outputLabel style="color: #ffffff; font-weight: bold" value="Minha Conta" />
+                             <h:graphicImage value="../../assets/images/login_buton.png" class="user-avatar-md rounded-circle" />
+                        </h:link>
+                        </span>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+</ui:composition>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="WEB-INF/template/layout.xhtml">
+    <ui:define name="content">
+
+        <div class="dashboard-main-wrapper">
+        <div class="influence-finder">
+        <div class="container-fluid  dashboard-content">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h2 class="mb-2">#{searchMB.documentTCC.title}</h2>
+                        <h3 class="mb-3">#{searchMB.documentTCC.user.name}</h3>
+                        <h3 class="mb-3">#{searchMB.documentTCC.user.name}</h3>
+
+                        <div class="page-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <!-- Link por perfil do autor -->
+                                        <a href="#" class="breadcrumb-link">#{searchMB.documentTCC.title}</a>
+                                        <a>    |     </a>
+                                        <!-- Buscar por curso -->
+                                        <a href="#" class="breadcrumb-link">#{searchMB.documentTCC.course}</a>
+                                    </li>
+
+
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <h3 class="mb-3">Descrição</h3>
+                    <p>#{searchMB.documentTCC.description}</p>
+                    <h:form>
+                    <div class="float-xl-right float-none mt-xl-0 mt-4">
+                        <h:commandLink styleClass="btn btn-secondary" value="Ver / Baixar" action="#{searchMB.viewDocumentPdf(searchMB.documentTCC.id)}"   target="_blank"/>
+                     </div>
+                    </h:form>
+                </div>
+
+                <!-- Comentarios -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <h5 class="card-header">Comentarios</h5>
+                        <!-- enviar comentario -->
+                        <div class="chat-module-top">
+                            <form>
+                                <div class="input-group input-group-round">
+                                    <form class="chat-form">
+                                                <textarea class="form-control" placeholder="Deixe um comentario"
+                                                          rows="2">
+                                                    </textarea>
+                                        <button class="btn btn-primary"> Comentar</button>
+
+                                    </form>
+
+                                </div>
+                            </form>
+
+                        </div>
+                        <!-- exibir comentarios-->
+                        <div class="chat-module-body">
+                            <div class="card-body">
+                                <div class="media chat-item">
+                                    <img alt="William" src="assets/images/avatar-1.jpg"
+                                         class="rounded-circle user-avatar-lg"/>
+                                    <div class="media-body">
+                                        <div class="review-block">
+                                            <span class="chat-item-author">Nome Usuario</span>
+                                            <span>dd/mm/yyyy</span>
+                                            <a href="" class="float-xl-right"> <i class="fas fa-trash mr-2"></i>
+                                            </a>
+
+                                        </div>
+                                        <div class="chat-item-body">
+                                            <p>Hey guys, Phasellus imperdiet arcu venenatis, malesuada nulla
+                                                a,
+                                                porta sem. Curabitur nec massa ultrices, consequat erat sit
+                                                amet,
+                                                luctus justo. Brand Concept &amp; Design!</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <hr/>
+                            </div>
+                            <div class="card-body">
+                                <div class="media chat-item">
+                                    <img alt="William" src="assets/images/avatar-1.jpg"
+                                         class="rounded-circle user-avatar-lg"/>
+                                    <div class="media-body">
+                                        <div class="review-block">
+                                            <span class="chat-item-author">Nome Usuario</span>
+                                            <span>dd/mm/yyyy</span>
+                                            <a href="" class="float-xl-right"> <i class="fas fa-trash mr-2"></i>
+                                            </a>
+
+                                        </div>
+                                        <div class="chat-item-body">
+                                            <p>Hey guys, Phasellus imperdiet arcu venenatis, malesuada nulla
+                                                a,
+                                                porta sem. Curabitur nec massa ultrices, consequat erat sit
+                                                amet,
+                                                luctus justo. Brand Concept &amp; Design!</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <hr/>
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        </div>
+
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/style1.css"></link>
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css"></link>
+    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="assets/libs/css/style.css"></link>
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css"></link>
+    <link rel="stylesheet" href="assets/vendor/charts/chartist-bundle/chartist.css"></link>
+    <link rel="stylesheet" href="assets/vendor/charts/morris-bundle/morris.css"></link>
+    <link rel="stylesheet" href="assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css"></link>
+    <link rel="stylesheet" href="assets/vendor/charts/c3charts/c3.css"></link>
+    <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css"></link>
+    <title>Inicio - Biblioteca de TCCs</title>
+</h:head>
+<h:body>
+    <div id="top">
+        <ui:insert name="top">
+            <ui:fragment rendered="#{loginMB.usuarioLogado == null}">
+            <ui:include src="header.xhtml"></ui:include>
+            </ui:fragment>
+            <ui:fragment rendered="#{loginMB.usuarioLogado != null}">
+                <ui:include src="header_logged.xhtml"></ui:include>
+            </ui:fragment>
+        </ui:insert>
+    </div>
+    <div class="dashboard-main-wrapper" id="content">
+        <ui:insert name="content">
+
+        </ui:insert>
+        <div id="footer">
+            <ui:insert name="footer">
+                <ui:include src="footer.xhtml"></ui:include>
+            </ui:insert>
+        </div>
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js" type="application/javascript"/>
+    <!-- bootstap bundle js -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js" type="application/javascript"/>
+    <!-- slimscroll js -->
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js" type="application/javascript"/>
+    <!-- main js -->
+    <script src="assets/libs/js/main-js.js" type="application/javascript"/>
+    <!-- chart chartist js -->
+    <script src="assets/vendor/charts/chartist-bundle/chartist.min.js" type="application/javascript"/>
+    <!-- sparkline js -->
+    <script src="assets/vendor/charts/sparkline/jquery.sparkline.js" type="application/javascript"/>
+    <!-- morris js -->
+    <script src="assets/vendor/charts/morris-bundle/raphael.min.js" type="application/javascript"/>
+    <script src="assets/vendor/charts/morris-bundle/morris.js" type="application/javascript"/>
+    <!-- chart c3 js -->
+    <script src="assets/vendor/charts/c3charts/c3.min.js" type="application/javascript"/>
+    <script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js" type="application/javascript"/>
+    <script src="assets/vendor/charts/c3charts/C3chartjs.js" type="application/javascript"/>
+    <script src="assets/libs/js/dashboard-ecommerce.js" type="application/javascript"/>
+
+</h:body>
+</html>

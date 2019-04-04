@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css"/>
+    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/libs/css/style.css"/>
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css"/>
+    <link rel="stylesheet" href="assets/vendor/charts/chartist-bundle/chartist.css"/>
+    <link rel="stylesheet" href="assets/vendor/charts/morris-bundle/morris.css"/>
+    <link rel="stylesheet" href="assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css"/>
+    <link rel="stylesheet" href="assets/vendor/charts/c3charts/c3.css"/>
+    <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css"/>
+
+
+    <title> Criar Conta - Biblioteca de TCCs</title>
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+<!-- ============================================================== -->
+<!-- signup form  -->
+<!-- ============================================================== -->
+
+<body>
+    <!-- ============================================================== -->
+    <!-- signup form  -->
+    <!-- ============================================================== -->
+    <div class="splash-container">
+        <div class="card">
+            <div class="card-header text-center">
+                <a href="inicio-nao-logado.html"><img class="logo-img" src="assets/telas 1.0/img/logo.png" alt="logo"/></a>
+                <span class="splash-description"></span>
+                <h5>Crie sua conta</h5>
+                <p>Ter uma conta permite que você envie disponibilize TCCs</p>
+            </div>
+            <div class="card-body">
+
+                <h:form id="formCadastro">
+                    <div class="form-group">
+                        <h:inputText id="nome" value="#{usuarioMB.usuario.name}" pt:placeholder="Nome" required="true" styleClass="form-control" requiredMessage="Nome obrigatório">
+                            <h:message for="nome"/>
+                        </h:inputText>
+                    </div>
+                    <div class="form-group">
+                        <h:inputText id="email" value="#{usuarioMB.usuario.email}" pt:placeholder="E-mail"   required="true" autocomplete="off" styleClass="form-control"></h:inputText>
+                    </div>
+                    <div class="form-group">
+                        <h:inputSecret id="senha" value="#{usuarioMB.usuario.password}" pt:placeholder="Senha" required="true" rendered="true" styleClass="form-control"></h:inputSecret>
+                    </div>
+                    <div class="form-group">
+                        <h:inputText id="telefone" value="#{usuarioMB.usuario.telephone}" pt:placeholder="Telefone" required="true" styleClass="form-control"></h:inputText>
+                    </div>
+
+                    <div class="form-group">
+                        <h:selectOneMenu styleClass="form-control" value="#{usuarioMB.usuario.sex}">
+                            <f:selectItem itemLabel="-- Sexo --" noSelectionOption="true" />
+                            <f:selectItem itemValue='F' itemLabel="Feminino" />
+                            <f:selectItem itemValue='M' itemLabel="Masculino" />
+                        </h:selectOneMenu>
+                    </div>
+
+                    <div class="form-group">
+                        <h:selectOneMenu styleClass="form-control" value="#{usuarioMB.usuario.type}">
+                            <f:selectItem itemLabel="-- Tipo --" noSelectionOption="true" />
+                            <f:selectItem itemValue="true" itemLabel="Administrador" />
+                            <f:selectItem itemValue="false" itemLabel="Usuário" />
+                        </h:selectOneMenu>
+                    </div>
+
+                    <div class="form-group">
+                        <h:inputText id="rua" value="#{usuarioMB.endereco.street}" pt:placeholder="Rua" required="true" styleClass="form-control"></h:inputText>
+                    </div>
+                    <div class="form-group">
+                        <h:inputText id="numero" value="#{usuarioMB.endereco.number}" pt:placeholder="Número" required="true" styleClass="form-control"></h:inputText>
+                    </div>
+                    <div class="form-group">
+                        <h:inputText id="cidade" value="#{usuarioMB.endereco.city}" pt:placeholder="Cidade" required="true" styleClass="form-control"></h:inputText>
+                    </div>
+                    <div class="form-group">
+                        <h:inputText id="cep" value="#{usuarioMB.endereco.zipcode}" pt:placeholder="CEP" required="true" styleClass="form-control"></h:inputText>
+                    </div>
+                    <div class="form-group">
+                        <h:selectOneMenu styleClass="form-control" value="#{usuarioMB.endereco.state}">
+                            <f:selectItem itemLabel="-- Selecione --" noSelectionOption="true" />
+                            <f:selectItems value="#{usuarioMB.estados}" />
+                        </h:selectOneMenu>
+                    </div>
+                    <h:commandButton styleClass="btn btn-primary btn-lg btn-block" action="#{usuarioMB.cadastrarUsuario}" value="Cadastrar"/>
+                    <h:messages id="messages" globalOnly="true"/>
+                </h:form>
+            </div>
+
+            <div class="card-footer bg-white p-0  ">
+                <div class="card-footer-item card-footer-item-bordered">
+                    <p> Já pussui um conta? <h:link outcome="login" class="footer-link">Entrar</h:link> </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+
+</html>

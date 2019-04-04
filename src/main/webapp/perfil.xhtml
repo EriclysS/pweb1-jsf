@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:body>
+<ui:composition>
+
+                        <!-- ============================================================== -->
+                        <!-- profile -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-9 col-lg-9 col-md-7 col-sm-12 col-12">
+                            <!-- ============================================================== -->
+                            <!-- card profile -->
+                            <!-- ============================================================== -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="user-avatar text-center d-block">
+                                        <img src="assets/images/avatar-1.jpg" alt="User Avatar" class="rounded-circle user-avatar-xxl"/>
+                                    </div>
+                                    <div class="text-center">
+                                        <h2 class="font-24 mb-0">#{usuarioMB.usuario.name}</h2>
+                                        <p>Project Manager @Influnce</p>
+                                    </div>
+                                </div>
+                                <div class="card-body border-top">
+                                    <h3 class="font-16">Informações de  contato</h3>
+                                    <div class="">
+                                        <ul class="list-unstyled mb-0">
+                                        <li class="mb-2"><i class="fas fa-fw fa-envelope mr-2"></i>#{perfilMB.usuario.email}</li>
+                                        <li class="mb-0"><i class="fas fa-fw fa-phone mr-2"></i>#{perfilMB.usuario.telephone}</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body border-top">
+                                        <h3 class="font-16">Endereço</h3>
+                                        <div class="">
+                                            <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><i class="fas fa-fw fas fa-map-marker-alt mr-2"></i>#{perfilMB.endereco.city} - #{perfilMB.endereco.state}</li>
+                                            <li class="mb-0"><i class="fas fa-fw fas fa-home mr-2"></i>#{perfilMB.endereco.street} - #{perfilMB.endereco.zipcode}</li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end card profile -->
+                            <!-- ============================================================== -->
+                        </div>
+
+</ui:composition>
+</h:body>
+
+</html>

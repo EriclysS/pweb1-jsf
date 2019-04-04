@@ -1,0 +1,77 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                template="WEB-INF/template/layout.xhtml">
+          <ui:define name="content">
+
+              <div class="dashboard-main-wrapper">
+                  <!-- ============================================================== -->
+                  <!-- Barra de navegaçao -->
+
+                  <!-- ============================================================== -->
+                  <!-- Corpo -->
+                  <div class="dashboard-wrapper">
+                      <div class="container-fluid dashboard-content">
+                          <div class="row">
+                              <div class="col-xl-8 col-lg-6 col-md-12 col-sm-12 col-12">
+                                  <div class="card">
+                                      <h5 class="card-header">Cadastro TCC</h5>
+                                      <div class="card-body">
+                                          <h:form enctype="multipart/form-data" id="form">
+                                              <div class="form-group row">
+                                                  <h:outputLabel for="titulo" value="Título"  class="col-3 col-lg-2 col-form-label text-right"/>
+                                                  <div class="col-9 col-lg-10">
+                                                      <h:inputText id="titulo" value="#{tccMB.documentTCC.title}" pt:placeholder="Título" required="true" styleClass="form-control" requiredMessage="Título obrigatório">
+                                                          <h:message for="titulo"/>
+                                                      </h:inputText>
+                                                  </div>
+                                              </div>
+
+                                              <div class="form-group row">
+                                                  <h:outputLabel for="curso" value="Curso"  class="col-3 col-lg-2 col-form-label text-right"/>
+                                                  <h:selectOneMenu value="#{tccMB.documentTCC.course}"  styleClass="form-control" required="true"  name="course" id="curso"  requiredMessage="Curso obrigatório" >
+                                                      <f:selectItem itemDisabled="true" itemLabel="Selecione o curso" noSelectionOption="true"/>
+                                                      <f:selectItem itemValue="Análise e desenvolvimento de Sistemas" itemLabel="ADS"/>
+                                                      <f:selectItem itemvalue="Engenharia Civil" itemLabel="Eng.Civil"/>
+                                                      <f:selectItem itemvalue="Metemática" itemLabel="Metemática"/>
+                                                      <f:selectItem itemvalue="Automação Industrial" itemLabel="Automação Industrial"/>
+                                                  </h:selectOneMenu>
+                                                  <h:message for="curso"/>
+                                              </div>
+
+                                              <div class="form-group row">
+                                                  <h:outputLabel for="descricao" value="Descrição" />
+                                                  <div class="col-9 col-lg-10">
+                                                      <h:inputTextarea id="descricao" value="#{tccMB.documentTCC.description}" />
+                                                  </div>
+
+                                              </div>
+
+                                              <div class="form-group row">
+                                                  <h:outputLabel for="arquivo" value="Arquivo"  class="col-3 col-lg-2 col-form-label text-right"/>
+                                                  <div id="arquivo" class="col-9 col-lg-10">
+                                                      <h:inputFile value="#{tccMB.arquivo}" accept="application/pdf"/>
+                                                  </div>
+                                              </div>
+
+                                              <div class="row pt-2 pt-sm-5 mt-1">
+
+                                                  <div class="col-sm-6 pl-0"></div>
+                                                  <p class="text-right">
+                                                      <h:commandButton styleClass="btn btn-space btn-primary" action="#{tccMB.cadastroTCC}" value="Cadastrar"/>
+                                                      <h:commandButton styleClass="btn btn-space btn-secondary" action="#{tccMB.cancelar()}" value="Cancelar"/>
+                                                  </p>
+                                                  <h:messages id="messages" globalOnly="true"/>
+                                              </div>
+                                          </h:form>
+                                      </div>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </ui:define>
+      </ui:composition>

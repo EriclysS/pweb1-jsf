@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="WEB-INF/template/layout.xhtml">
+<ui:define name="content">
+
+<head>
+    <style type="text/css">
+
+
+        .splash-container {
+            position: center;
+            margin-top: 100px;
+        }
+
+        .msg_login {
+            background: #ff4422;
+            border: #1b1e21 1px;
+            color: #fff;
+            padding: 5px;
+            margin: 5px;
+
+        }
+    </style>
+</head>
+
+<h:body>
+
+        <div class="splash-container" >
+            <div class="card ">
+                <div class="card-header text-center">
+                    <h:graphicImage  value="//img.icons8.com/cotton/64/000000/gender-neutral-user.png" />
+                    <span class="splash-description"></span></div>
+                <div class="card-body">
+                    <h:form name="formLogin">
+                        <div class="form-group">
+                            <h:inputText pt:placeholder="Email" styleClass="form-control form-control-lg" id="email" required="true" value="#{loginMB.email}" requiredMessage="Login obrigatório"/>
+                            <h:message for="email"/>
+                            <h:outputLabel value="#{msg['login.email']}"/>
+                        </div>
+                        <div class="form-group">
+                            <h:inputSecret pt:placeholder="Senha" id="senha" styleClass="form-control form-control-lg" required="true" value="#{loginMB.senha}" requiredMessage=" Senha obrigatória "/>
+                            <h:message for="senha"/>
+                            <h:outputLabel value="#{msg['login.senha']}"/>
+                        </div>
+                        <h:commandButton styleClass="btn btn-primary btn-lg btn-block" action="#{loginMB.autenticacao}" value="Login"/>
+                        <h:messages styleClass="msg_login" globalOnly="true"></h:messages>
+                    </h:form>
+                </div>
+                <div class="card-footer bg-white p-0  ">
+                    <div class="card-footer-item card-footer-item-bordered">
+                        <p> Ainda não tem conta? <a href="cadastro.xhtml" class="footer-link">Criar Conta</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</h:body>
+</ui:define>
+</ui:composition>
+</html>
+
