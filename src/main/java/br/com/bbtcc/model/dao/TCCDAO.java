@@ -39,7 +39,7 @@ public class TCCDAO implements ITCCDAO{
         Optional<DocumentTCC> document = null;
         List<DocumentTCC> documents = new ArrayList<>();
 
-        String sql = "SELECT * FROM tcc WHERE titulo LIKE '%"+searchString+"%'";
+        String sql = "SELECT * FROM tcc WHERE titulo ILIKE '%"+searchString+"%'";
         Statement statement = connection.createStatement();
         ResultSet set = statement.executeQuery(sql);
         while (set.next()) {

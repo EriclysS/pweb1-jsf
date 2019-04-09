@@ -8,15 +8,14 @@ import br.com.bbtcc.model.dao.factory.DAOAbstractFactory;
 import br.com.bbtcc.model.dao.factory.FactoryProducer;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
 import java.sql.SQLException;
 
 @ManagedBean(name="perfilMB")
-@ViewScoped
+@SessionScoped
 public class PerfilManagedBean {
     private UserDAO userDAO = null;
     private AddressDAO addressDAO = null;

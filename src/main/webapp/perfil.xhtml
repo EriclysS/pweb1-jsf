@@ -7,11 +7,11 @@
 
 
 <h:body>
-<ui:composition>
-
-                        <!-- ============================================================== -->
-                        <!-- profile -->
-                        <!-- ============================================================== -->
+<ui:composition template="WEB-INF/template/layout.xhtml">
+    <ui:define name="content">
+<div class="dashboard-wrapper">
+              <div class="container-fluid dashboard-content ">
+                   <div class="row">
                         <div class="col-xl-9 col-lg-9 col-md-7 col-sm-12 col-12">
                             <!-- ============================================================== -->
                             <!-- card profile -->
@@ -22,8 +22,7 @@
                                         <img src="assets/images/avatar-1.jpg" alt="User Avatar" class="rounded-circle user-avatar-xxl"/>
                                     </div>
                                     <div class="text-center">
-                                        <h2 class="font-24 mb-0">#{usuarioMB.usuario.name}</h2>
-                                        <p>Project Manager @Influnce</p>
+                                        <h2 class="font-24">#{perfilMB.usuario.name}</h2>
                                     </div>
                                 </div>
                                 <div class="card-body border-top">
@@ -49,6 +48,10 @@
                             <!-- end card profile -->
                             <!-- ============================================================== -->
                         </div>
+                   </div>
+              </div>
+    </div>
+    </ui:define>
 
 </ui:composition>
 </h:body>

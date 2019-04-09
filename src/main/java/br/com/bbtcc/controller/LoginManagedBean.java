@@ -41,7 +41,6 @@ public class LoginManagedBean {
         }
 
         usuarioLogado = usuario.map( u -> { u.setPassword(null); return u; }).get();
-        System.out.println(usuarioLogado.getName());
         email = null;
         senha = null;
         userDAO = null;

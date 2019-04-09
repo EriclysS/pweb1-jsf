@@ -17,8 +17,8 @@
                               <div class="col-xl-8 col-lg-6 col-md-12 col-sm-12 col-12">
                                   <div class="card">
                                       <h5 class="card-header">Cadastro TCC</h5>
+                                      <h:form enctype="multipart/form-data" id="form">
                                       <div class="card-body">
-                                          <h:form enctype="multipart/form-data" id="form">
                                               <div class="form-group row">
                                                   <h:outputLabel for="titulo" value="Título"  class="col-3 col-lg-2 col-form-label text-right"/>
                                                   <div class="col-9 col-lg-10">
@@ -30,6 +30,7 @@
 
                                               <div class="form-group row">
                                                   <h:outputLabel for="curso" value="Curso"  class="col-3 col-lg-2 col-form-label text-right"/>
+                                                  <div class="col-9 col-lg-10">
                                                   <h:selectOneMenu value="#{tccMB.documentTCC.course}"  styleClass="form-control" required="true"  name="course" id="curso"  requiredMessage="Curso obrigatório" >
                                                       <f:selectItem itemDisabled="true" itemLabel="Selecione o curso" noSelectionOption="true"/>
                                                       <f:selectItem itemValue="Análise e desenvolvimento de Sistemas" itemLabel="ADS"/>
@@ -38,19 +39,19 @@
                                                       <f:selectItem itemvalue="Automação Industrial" itemLabel="Automação Industrial"/>
                                                   </h:selectOneMenu>
                                                   <h:message for="curso"/>
-                                              </div>
-
-                                              <div class="form-group row">
-                                                  <h:outputLabel for="descricao" value="Descrição" />
-                                                  <div class="col-9 col-lg-10">
-                                                      <h:inputTextarea id="descricao" value="#{tccMB.documentTCC.description}" />
                                                   </div>
+                                              </div>
 
+                                             <div class="form-group row">
+                                              <h:outputLabel for="descricao" value="Descrição" />
+                                              <div class="col-9 col-lg-10">
+                                                  <h:inputTextarea  style="height:100%; width: 100%" id="descricao" value="#{tccMB.documentTCC.description}" />
+                                               </div>
                                               </div>
 
                                               <div class="form-group row">
-                                                  <h:outputLabel for="arquivo" value="Arquivo"  class="col-3 col-lg-2 col-form-label text-right"/>
-                                                  <div id="arquivo" class="col-9 col-lg-10">
+                                                  <h:outputLabel  for="arquivo" value="Arquivo"  class="col-3 col-lg-2 col-form-label text-right"/>
+                                                  <div  id="arquivo" class="col-sm-6 pl-0">
                                                       <h:inputFile value="#{tccMB.arquivo}" accept="application/pdf"/>
                                                   </div>
                                               </div>
@@ -64,9 +65,8 @@
                                                   </p>
                                                   <h:messages id="messages" globalOnly="true"/>
                                               </div>
-                                          </h:form>
                                       </div>
-
+                                      </h:form>
                                   </div>
                               </div>
                           </div>

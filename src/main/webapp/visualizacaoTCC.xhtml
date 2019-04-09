@@ -11,7 +11,6 @@
                     <div class="page-header">
                         <h2 class="mb-2">#{searchMB.documentTCC.title}</h2>
                         <h3 class="mb-3">#{searchMB.documentTCC.user.name}</h3>
-                        <h3 class="mb-3">#{searchMB.documentTCC.user.name}</h3>
 
                         <div class="page-breadcrumb">
                             <nav aria-label="breadcrumb">
@@ -48,78 +47,48 @@
                         <h5 class="card-header">Comentarios</h5>
                         <!-- enviar comentario -->
                         <div class="chat-module-top">
-                            <form>
+                            <h:form>
                                 <div class="input-group input-group-round">
-                                    <form class="chat-form">
-                                                <textarea class="form-control" placeholder="Deixe um comentario"
-                                                          rows="2">
-                                                    </textarea>
-                                        <button class="btn btn-primary"> Comentar</button>
-
-                                    </form>
-
+                                        <h:inputTextarea styleClass="form-control" rows="2" id="descricao" value="#{comentarioMB.novoComentario}" />
+                                        <h:commandButton styleClass="btn btn-primary" action="#{comentarioMB.comentar(searchMB.documentTCC.id)}" value="Comentar"/>
                                 </div>
-                            </form>
-
+                            </h:form>
+                            <h:messages id="messages" globalOnly="true"/>
                         </div>
                         <!-- exibir comentarios-->
                         <div class="chat-module-body">
-                            <div class="card-body">
-                                <div class="media chat-item">
-                                    <img alt="William" src="assets/images/avatar-1.jpg"
-                                         class="rounded-circle user-avatar-lg"/>
-                                    <div class="media-body">
-                                        <div class="review-block">
-                                            <span class="chat-item-author">Nome Usuario</span>
-                                            <span>dd/mm/yyyy</span>
-                                            <a href="" class="float-xl-right"> <i class="fas fa-trash mr-2"></i>
-                                            </a>
+                            <h:inputHidden value="#{comentarioMB.buscarComentarios(searchMB.documentTCC.id)}" class="targ" />
+                            <h:dataTable class="card" value="#{comentarioMB.comentarios}" var="comentario"  cellspacing="1" cellpadding="1">
+                                <h:column rendered="#{comentarioMB.comentarios == null}">
+                                    <p>Ainda não possui comentário, seja o primeiro a comentar. </p>
+                                </h:column>
+                                <h:column class="card-body">
+
+                                    <div class="card-body">
+                                        <div class="media chat-item">
+                                            <img alt="William" src="assets/images/avatar-1.jpg"
+                                                 class="rounded-circle user-avatar-lg"/>
+                                            <div class="media-body">
+                                                <div class="review-block">
+                                                    <span class="chat-item-author">#{comentario.user.name}</span>
+                                                    <h:form>
+                                                        <h:commandLink rendered="#{comentario.user.email eq loginMB.usuarioLogado.email}" action="#{comentarioMB.deletar(comentario.documentTCC.id, comentario.id)}" styleClass="float-xl-right">
+                                                            <i class="fas fa-trash mr-2"></i>
+                                                        </h:commandLink>
+                                                    </h:form>
+                                                </div>
+                                                <div class="chat-item-body">
+                                                    <p>#{comentario.commentary}</p>
+                                                </div>
+
+                                            </div>
 
                                         </div>
-                                        <div class="chat-item-body">
-                                            <p>Hey guys, Phasellus imperdiet arcu venenatis, malesuada nulla
-                                                a,
-                                                porta sem. Curabitur nec massa ultrices, consequat erat sit
-                                                amet,
-                                                luctus justo. Brand Concept &amp; Design!</p>
-                                        </div>
-
+                                        <hr/>
                                     </div>
 
-                                </div>
-                                <hr/>
-                            </div>
-                            <div class="card-body">
-                                <div class="media chat-item">
-                                    <img alt="William" src="assets/images/avatar-1.jpg"
-                                         class="rounded-circle user-avatar-lg"/>
-                                    <div class="media-body">
-                                        <div class="review-block">
-                                            <span class="chat-item-author">Nome Usuario</span>
-                                            <span>dd/mm/yyyy</span>
-                                            <a href="" class="float-xl-right"> <i class="fas fa-trash mr-2"></i>
-                                            </a>
-
-                                        </div>
-                                        <div class="chat-item-body">
-                                            <p>Hey guys, Phasellus imperdiet arcu venenatis, malesuada nulla
-                                                a,
-                                                porta sem. Curabitur nec massa ultrices, consequat erat sit
-                                                amet,
-                                                luctus justo. Brand Concept &amp; Design!</p>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <hr/>
-                            </div>
-
-
-
-
-
-
+                                </h:column>
+                            </h:dataTable>
 
                         </div>
 

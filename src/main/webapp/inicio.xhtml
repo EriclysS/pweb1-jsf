@@ -11,22 +11,21 @@
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="section-block" id="inputmask">
                                         <h1 class="section-title">Buscar TCCS</h1>
-                                        <p>Descrição do site</p>
-                                    </div>
+                                            <p>Descrição do site</p>
+                                        </div>
                                     <div class="card">
                                         <div class="card-body border-top">
                                             <div class="form-group">
                                                 <label class="col-form-label">Faça sua busca pelo titulo</label>
+                                                <h:form>
                                                 <div class="input-group mb-3">
-
-                                                        <h:form>
-                                                            <h:inputText styleClass="form-control" value="#{searchMB.searchParameter}" id="searchParameter" />
+                                                            <h:inputText styleClass="form-control"  value="#{searchMB.searchParameter}" id="searchParameter" />
                                                             <div class="input-group-append">
                                                                 <h:commandButton styleClass="btn btn-primary" value="Pesquisar" action="#{searchMB.searchDocuments}"/>
                                                             </div>
-                                                        </h:form>
-                                                </div>
 
+                                                </div>
+                                                </h:form>
 
                                                 <h:dataTable class="card" value="#{searchMB.documentTCCList}" var="tcc"  cellspacing="1" cellpadding="1">
 
